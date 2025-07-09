@@ -61,7 +61,7 @@ export default function Layout({ children, currentPageName }) {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to={createPageUrl("Home")} className="flex items-center space-x-3">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Coat_of_arms_of_Israel.svg/515px-Coat_of_arms_of_Israel.svg.png" alt="State of Israel Emblem" className="h-10"/>
+              <img src="https://picsum.photos/seed/govmobilelogo/48/48" alt="App Logo" className="h-10 w-10 rounded-full border border-slate-200 object-cover" onError={e => { e.target.onerror = null; e.target.src = 'https://picsum.photos/seed/govmobilefallback/48/48'; }} />
               <div className="hidden sm:block">
                 <h1 className="text-xl font-bold text-slate-800">Gov Mobile</h1>
                 <p className="text-sm text-slate-500">משרד הממשלה</p>
@@ -101,7 +101,7 @@ export default function Layout({ children, currentPageName }) {
                 <SheetContent side="right" className="w-80">
                   <div className="py-6">
                     <div className="flex items-center space-x-3 mb-8 px-4">
-                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Coat_of_arms_of_Israel.svg/515px-Coat_of_arms_of_Israel.svg.png" alt="State of Israel Emblem" className="h-10"/>
+                      <img src="https://picsum.photos/seed/govmobilelogo/48/48" alt="App Logo" className="h-10 w-10 rounded-full border border-slate-200 object-cover" onError={e => { e.target.onerror = null; e.target.src = 'https://picsum.photos/seed/govmobilefallback/48/48'; }} />
                       <div>
                         <h1 className="text-xl font-bold text-slate-800">Gov Mobile</h1>
                         <p className="text-sm text-slate-500">משרד הממשלה</p>
