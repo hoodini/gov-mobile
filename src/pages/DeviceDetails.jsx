@@ -151,7 +151,12 @@ export default function DeviceDetails() {
           <Card className="border-0 shadow-lg mb-6">
             <CardContent className="p-6">
               <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl flex items-center justify-center mb-6">
-                <img src={device.image_url} alt={device.model} className="w-full h-full object-contain p-4"/>
+                <img
+                  src={device.image_url || `https://picsum.photos/seed/device${device.id}/400/400`}
+                  alt={device.model}
+                  className="w-full h-full object-contain p-4"
+                  onError={e => { e.target.onerror = null; e.target.src = `https://picsum.photos/seed/device${device.id}/400/400`; }}
+                />
               </div>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
