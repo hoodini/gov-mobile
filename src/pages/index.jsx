@@ -16,6 +16,8 @@ import Home from "./Home";
 
 import Contact from "./Contact";
 
+import Login from "./Login";
+
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 const PAGES = {
@@ -36,6 +38,7 @@ const PAGES = {
     
     Contact: Contact,
     
+    Login: Login,
 }
 
 function _getCurrentPage(url) {
@@ -78,6 +81,8 @@ function PagesContent() {
                 <Route path="/Home" element={<Home />} />
                 
                 <Route path="/Contact" element={<Contact />} />
+                
+                <Route path="/Login" element={<Login />} />
                 
             </Routes>
         </Layout>
