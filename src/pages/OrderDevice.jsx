@@ -383,11 +383,12 @@ export default function OrderDevice() {
               {/* Device Info */}
               <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg">
                 <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg flex items-center justify-center">
-                  {device.image_url ? (
-                    <img src={device.image_url} alt={device.model} className="w-full h-full object-contain p-2"/>
-                  ) : (
-                    <Smartphone className="w-8 h-8 text-slate-400" />
-                  )}
+                  <img
+                    src={device.image_url || `https://picsum.photos/seed/device${device.id}/200/200`}
+                    alt={device.model}
+                    className="w-full h-full object-contain p-2"
+                    onError={e => { e.target.onerror = null; e.target.src = `https://picsum.photos/seed/device${device.id}/200/200`; }}
+                  />
                 </div>
                 <div>
                   <h3 className="font-medium text-slate-800">{device.model}</h3>
