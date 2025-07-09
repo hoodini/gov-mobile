@@ -1,0 +1,7 @@
+{
+  "customers": [
+    { "id": 1, "name": "Alice Smith", "isEmployee": true },
+    { "id": 2, "name": "Bob Johnson", "isEmployee": false },
+    { "id": 3, "name": "Carol Lee", "isEmployee": true }
+  ]
+}
