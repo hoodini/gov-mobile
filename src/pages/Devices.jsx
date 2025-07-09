@@ -223,7 +223,12 @@ export default function Devices() {
             {viewMode === "grid" ? (
               <>
                 <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-                  <img src={device.image_url} alt={device.model} className="w-full h-full object-contain p-4"/>
+                  <img
+                    src={device.image_url || `https://picsum.photos/seed/device${device.id}/400/400`}
+                    alt={device.model}
+                    className="w-full h-full object-contain p-4"
+                    onError={e => { e.target.onerror = null; e.target.src = `https://picsum.photos/seed/device${device.id}/400/400`; }}
+                  />
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
@@ -272,7 +277,12 @@ export default function Devices() {
               <CardContent className="p-6">
                 <div className="flex items-center space-x-6">
                   <div className="w-20 h-20 bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <img src={device.image_url} alt={device.model} className="w-full h-full object-contain p-2"/>
+                    <img
+                      src={device.image_url || `https://picsum.photos/seed/device${device.id}/200/200`}
+                      alt={device.model}
+                      className="w-full h-full object-contain p-2"
+                      onError={e => { e.target.onerror = null; e.target.src = `https://picsum.photos/seed/device${device.id}/200/200`; }}
+                    />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-2">
