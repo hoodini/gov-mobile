@@ -255,7 +255,12 @@ export default function Dashboard() {
             {devices.map((device) => (
               <div key={device.id} className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow duration-200 flex flex-col">
                 <div className="aspect-square bg-slate-100 rounded-lg mb-4 flex items-center justify-center">
-                  <img src={device.image_url} alt={device.model} className="w-full h-full object-contain p-4"/>
+                  <img
+                    src={device.image_url || `https://picsum.photos/seed/device${device.id}/400/400`}
+                    alt={device.model}
+                    className="w-full h-full object-contain p-4"
+                    onError={e => { e.target.onerror = null; e.target.src = `https://picsum.photos/seed/device${device.id}/400/400`; }}
+                  />
                 </div>
                 <h3 className="font-semibold text-slate-800 mb-2">{device.model}</h3>
                 <p className="text-sm text-slate-600 mb-4">{device.brand}</p>
