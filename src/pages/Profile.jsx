@@ -174,10 +174,18 @@ export default function Profile() {
         <div className="lg:col-span-2">
           <Card className="border-0 shadow-lg">
             <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <UserCircle className="w-5 h-5" />
-                <span>Personal Information</span>
-              </CardTitle>
+              <div className="flex items-center space-x-4">
+                <img
+                  src={`https://picsum.photos/seed/profile${user?.id || 'default'}/80/80`}
+                  alt="Profile Avatar"
+                  className="w-14 h-14 rounded-full border border-slate-200 object-cover"
+                  onError={e => { e.target.onerror = null; e.target.src = `https://picsum.photos/seed/profiledefault/80/80`; }}
+                />
+                <CardTitle className="flex items-center space-x-2">
+                  <UserCircle className="w-5 h-5" />
+                  <span>Personal Information</span>
+                </CardTitle>
+              </div>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleUpdateProfile} className="space-y-6">
