@@ -24,9 +24,7 @@ export default function Home() {
     }
   };
   
-  const handleRealLogin = async () => {
-    await User.login();
-  };
+
 
   return (
     <div>
@@ -38,9 +36,6 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight hebrew-font">שירות הסלולר הממשלתי</h1>
           <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-blue-100">The official portal for government employees to manage and order mobile devices.</p>
           <div className="mt-8 flex justify-center gap-4">
-            <Button size="lg" onClick={handleRealLogin} className="bg-white text-blue-700 hover:bg-blue-50">
-              <LogIn className="mr-2 h-5 w-5" /> Official Login
-            </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => document.getElementById('demo-section').scrollIntoView({ behavior: 'smooth' })}>
               <UserIcon className="mr-2 h-5 w-5" /> View Demo
             </Button>

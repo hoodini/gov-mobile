@@ -8,4 +8,4 @@ export const Order = base44.entities.Order;
 
 
 // auth sdk:
-export const User = base44.auth;
+// export const User = base44.auth;
